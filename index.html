@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física I (FACET)</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEyMCIgZmlsbD0iI2U2N2UyMiIvPjxwYXRoIGQ9Ik0yNjAuNiwxMTcuOGMtMzIuOCwwLTYzLjUsMTAtODkuNiwyNy4yYy0zLjEtMC4zLTYuMi0wLjUtOS40LTAuNWMtNTEuMiwwLTkyLjcsNDEuNS05Mi43LDkyLjdjMCwzNC44LDE5LjIsNjUuMiw0Ny43LDgxYzMsMzAuMiwyOC41LDUzLjgsNTkuNiw1My44YzEyLjMsMCwyMy44LTMuNywzMy40LTEwYzIyLjEsMzAuMyw1OCw1MC4xLDk4LjYsNTAuMWM2OCwwLDEyMy4yLTU1LjIsMTIzLjItMTIzLjJDNDMxLjMsMjA1LDM4OS4yLDEyNi45LDI2MC42LDExNy44eiIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjE2IiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMjI2IiB5PSIyMjYiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9IiMyYzNlNTAiLz48cGF0aCBkPSJNMjI2LDI0NGgtMjQgTTI4NiwyNDRoMjQgTTIyNiwyNjhoLTI0IE0yODYsMjY4aDI0IE0yNDQsMjI2di0yNCBNMjQ0LDI4NnYyNCBNMjY4LDIyNnYtMjQgTTI2OCwyODZ2MjQiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMzI2IiByPSIxOCIgZmlsbD0iI2YxYzQwZiIvPjwvc3ZnPg==">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEyMCIgZmlsbD0iI2U2N2UyMiIvPjxwYXRoIGQ9Ik0yNjAuNiwxMTcuOGMtMzIuOCwwLTYzLjUsMTAtODkuNiwyNy4yYy0zLjEtMC4zLTYuMi0wLjUtOS40LTAuNWMtNTEuMiwwLTkyLjcsNDEuNS05Mi43LDkyLjdjMCwzNC44LDE5LjIsNjUuMiw0Ny43LDgxYzMsMzAuMiwyOC41LDUzLjgsNTkuNiw1My44YzEyLjMsMCwyMy44LTMuNywzMy40LTEwYzIyLjEsMzAuMyw1OCw1MC4xLDk4LjYsNTAuMWM2OCwwLDEyMy4yLTU1LjIsMTIzLjItMTIzLjJDNDMxLjMsMjA1LDM4OS4yLDEyNi45LDI2MC42LDExNy44eiIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjE2IiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMjI2IiB5PSIyMjYiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcng9IjgiIGZpbGw9IiMyYzNlNTAiLz48cGF0aCBkPSJNMjI2LDI0NGgtMjQgTTI4NiwyNDRoMjQgTTIyNiwyNjhoLTI0IE0yODYsMjY4aDI0IE0yNDQsMjI2di0yNCBNMjQ0LDI4NnYyNCBNMjY4LDIyNnYtMjQgTTI2OCwyODZ2MjQiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMzI2IiByPSIxOCIgZmlsbD0iI2YxYzQwZiIvPjwvc3ZnPg==">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Física I">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#e67e22">
+
+    <style>
+        :root {
+            --bg-color: #fdfaf7;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --accent: #e67e22;
+            --success: #27ae60;
+            --strike: #e74c3c;
+            --border-radius: 12px;
+            --nav-bg: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 3rem;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            padding: 1.5rem 1rem 1rem 1rem;
+        }
+
+        h1 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .progress-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--success);
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 22px;
+            color: #333;
+            pointer-events: none;
+        }
+
+        nav {
+            background-color: var(--nav-bg);
+            display: flex;
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding: 0 1rem;
+            scrollbar-width: none;
+        }
+        
+        @media (min-width: 900px) {
+            nav {
+                justify-content: center;
+            }
+        }
+
+        nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: #ecf0f1;
+            padding: 1rem 1.2rem;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            border-bottom: 4px solid transparent;
+        }
+
+        .nav-btn:hover {
+            background-color: #34495e;
+        }
+
+        .nav-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            background-color: #34495e;
+        }
+
+        .list-container {
+            width: 95%;
+            max-width: 1200px;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 1.5rem;
+            align-items: start; 
+        }
+
+        @media (max-width: 768px) {
+            .list-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .topic-group {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .topic-header {
+            padding: 1rem 1.5rem;
+            background-color: #fdf8f5;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eaeaea;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .topic-header:hover {
+            background-color: #faebd7;
+        }
+
+        .subtopics {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item {
+            padding: 0.8rem 1.5rem 0.8rem 3rem;
+            border-bottom: 1px solid #f1f1f1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item:hover {
+            background-color: #fafbfc;
+        }
+
+        .check-circle {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .completed > .check-circle {
+            background-color: var(--success);
+            border-color: var(--success);
+        }
+
+        .completed > .check-circle::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .completed > .text-content {
+            text-decoration: line-through;
+            text-decoration-color: var(--strike);
+            text-decoration-thickness: 2px;
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+        
+        .text-content {
+            transition: all 0.3s ease;
+            flex-grow: 1;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            margin-left: auto;
+            border-radius: 6px;
+            color: #95a5a6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #f0e6d2;
+            color: var(--accent);
+        }
+
+        .copy-btn.copied {
+            color: var(--success);
+        }
+        
+        .icon-svg {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Física I (Programa Oficial)</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressText">0% Progreso del Tema</div>
+            </div>
+        </div>
+        <nav id="navMenu">
+            <button class="nav-btn active" data-tema="1">Introduccion</button>
+            <button class="nav-btn" data-tema="2">Dinámica de la particula</button>
+            <button class="nav-btn" data-tema="3">Dinámica de la particula II</button>
+            <button class="nav-btn" data-tema="4">Cant. de mov y Energia de una particula</button>
+            <button class="nav-btn" data-tema="5">Sistemas de particulas</button>
+            <button class="nav-btn" data-tema="6">Dinamica y estatica del Cuerpo Rígido</button>
+            <button class="nav-btn" data-tema="7">Gravitación</button>
+        </nav>
+    </header>
+
+    <div class="list-container" id="listContainer">
+        </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const data = {
+                "1": [
+                    {
+                        id: "T1_A", 
+                        title: "📝 Modelos y Magnitudes",
+                        children: [
+                            { id: "T1_A1", title: "Observaciones y modelos en Física. Leyes y Teorías" },
+                            { id: "T1_A2", title: "Magnitudes y cantidades físicas" },
+                            { id: "T1_A3", title: "Mediciones y unidades: sistema Internacional (SI) y SIMELA" }
+                        ]
+                    },
+                    {
+                        id: "T1_B", 
+                        title: "🎯 Errores y Dimensiones",
+                        children: [
+                            { id: "T1_B1", title: "Cifras significativas e incertidumbre o error" },
+                            { id: "T1_B2", title: "Propagación de errores" },
+                            { id: "T1_B3", title: "Notación científica. Homogeneidad dimensional" }
+                        ]
+                    }
+                ],
+                "2": [
+                    {
+                        id: "T2_A", 
+                        title: "📍 Vectores y Cinemática 1D",
+                        children: [
+                            { id: "T2_A1", title: "El modelo de partícula. Sistemas de referencia y de coordenadas" },
+                            { id: "T2_A2", title: "Vector posición, desplazamiento, velocidad (media/inst) y aceleración" },
+                            { id: "T2_A3", title: "Cinemática y dinámica del movimiento en 1D. Diagramas x(t), v(t) y a(t)" }
+                        ]
+                    },
+                    {
+                        id: "T2_B", 
+                        title: "⚖️ Dinámica y Leyes de Newton",
+                        children: [
+                            { id: "T2_B1", title: "Leyes de Newton. Sistemas de referencia inerciales" },
+                            { id: "T2_B2", title: "Masa y peso de los cuerpos" },
+                            { id: "T2_B3", title: "Fuerzas de contacto: normal y roce. Coeficientes (estático/dinámico)" },
+                            { id: "T2_B4", title: "Fuerzas en los vínculos ('reacciones' de vínculo)" }
+                        ]
+                    }
+                ],
+                "3": [
+                    {
+                        id: "T3_A", 
+                        title: "🛸 Movimiento en Plano y Angular",
+                        children: [
+                            { id: "T3_A1", title: "Movimiento en el plano. Diagramas y(x). Tiro oblicuo" },
+                            { id: "T3_A2", title: "Movimiento circunferencial uniforme y variado" },
+                            { id: "T3_A3", title: "Dinámica y cinemática angular. Velocidad angular (vector) y tangencial" },
+                            { id: "T3_A4", title: "Relación vectorial entre r, w y v" }
+                        ]
+                    },
+                    {
+                        id: "T3_B", 
+                        title: "🔄 Aceleración y Sistemas Relativos",
+                        children: [
+                            { id: "T3_B1", title: "Fuerza centrípeta y aceleración centrípeta" },
+                            { id: "T3_B2", title: "Aceleración angular y tangencial" },
+                            { id: "T3_B3", title: "Sistemas con mov. relativo: ec. de transformación de Galileo" },
+                            { id: "T3_B4", title: "Sistemas de referencia no inerciales" }
+                        ]
+                    }
+                ],
+                "4": [
+                    {
+                        id: "T4_A", 
+                        title: "💥 Cantidad de Movimiento e Impulso",
+                        children: [
+                            { id: "T4_A1", title: "Cantidad de movimiento lineal de una partícula" },
+                            { id: "T4_A2", title: "Impulso de una fuerza. Redefinición de fuerza" },
+                            { id: "T4_A3", title: "Teorema de conservación del impulso lineal. Casos de masa variable" }
+                        ]
+                    },
+                    {
+                        id: "T4_B", 
+                        title: "🔋 Trabajo y Energía",
+                        children: [
+                            { id: "T4_B1", title: "Trabajo como producto escalar de vectores y Teorema trabajo-energía cinética" },
+                            { id: "T4_B2", title: "Trabajo del peso y E. potencial gravitatoria. Fuerzas y E. potencial elástica" },
+                            { id: "T4_B3", title: "Fuerzas conservativas y no conservativas. Energía mecánica: conservación. Potencia" }
+                        ]
+                    },
+                    {
+                        id: "T4_C", 
+                        title: "🌀 Impulso Angular y Rotación",
+                        children: [
+                            { id: "T4_C1", title: "Impulso angular de una partícula respecto a un punto y sus componentes cartesianas" },
+                            { id: "T4_C2", title: "Momento de una fuerza o de rotación. Conservación del impulso angular" },
+                            { id: "T4_C3", title: "Fuerza central. Reformulación de la dinámica de rotación de una partícula" }
+                        ]
+                    },
+                    {
+                        id: "T4_D", 
+                        title: "⚙️ Dinámica de Rotación",
+                        children: [
+                            { id: "T4_D1", title: "Momento de inercia" },
+                            { id: "T4_D2", title: "Ecuación fundamental de la dinámica de rotación" },
+                            { id: "T4_D3", title: "El teorema trabajo-energía en la rotación" }
+                        ]
+                    }
+                ],
+                "5": [
+                    {
+                        id: "T5_A", 
+                        title: "👥 Centro de Masa y Conservación",
+                        children: [
+                            { id: "T5_A1", title: "Centro de masa. Coordenadas. Propiedades del c.m." },
+                            { id: "T5_A2", title: "Impulso lineal e impulso angular de un sistema de partículas" },
+                            { id: "T5_A3", title: "Teorema de conservación. El teorema trabajo-energía" }
+                        ]
+                    },
+                    {
+                        id: "T5_B", 
+                        title: "🔋 Energías del Sistema",
+                        children: [
+                            { id: "T5_B1", title: "Fuerzas internas conservativas" },
+                            { id: "T5_B2", title: "Energía potencial interna. Energía propia. Energía interna" },
+                            { id: "T5_B3", title: "Impulso angular de un sistema de partículas: interno y orbital" }
+                        ]
+                    },
+                    {
+                        id: "T5_C", 
+                        title: "🎱 Sistemas y Colisiones",
+                        children: [
+                            { id: "T5_C1", title: "Sistemas de dos partículas. Masa reducida" },
+                            { id: "T5_C2", title: "Colisiones: choques centrales: elástico, plástico, semielástico y explosivo" },
+                            { id: "T5_C3", title: "Coeficiente de restitución. Colisiones en dos dimensiones" }
+                        ]
+                    }
+                ],
+                "6": [
+                    {
+                        id: "T6_A", 
+                        title: "🧱 Modelo y Momento de Inercia",
+                        children: [
+                            { id: "T6_A1", title: "El modelo de cuerpo rígido. Centro de masa, centro de gravedad y propiedades" },
+                            { id: "T6_A2", title: "Grados de libertad. Rotación alrededor de eje fijo por el centro de masa" },
+                            { id: "T6_A3", title: "Momento de inercia. Cálculo. Teorema de Steiner" }
+                        ]
+                    },
+                    {
+                        id: "T6_B", 
+                        title: "🔄 Dinámica de Rotación del Cuerpo Rigido",
+                        children: [
+                            { id: "T6_B1", title: "Impulso angular del cuerpo rígido. Ejes principales de inercia" },
+                            { id: "T6_B2", title: "Ecuación fundamental de la dinámica de rotación. Desequilibrio dinámico" },
+                            { id: "T6_B3", title: "Trabajo y energía en movimiento del cuerpo rígido. Teoremas de conservación" }
+                        ]
+                    },
+                    {
+                        id: "T6_C", 
+                        title: "🚗 Rodadura y Estática",
+                        children: [
+                            { id: "T6_C1", title: "Movimiento rototraslatorio: rotación sin deslizamiento. Roce en rodaduras" },
+                            { id: "T6_C2", title: "Giróscopo. Precesión. Nutación" },
+                            { id: "T6_C3", title: "Estática del cuerpo rígido: condiciones de equilibrio" }
+                        ]
+                    }
+                ],
+                "7": [
+                    {
+                        id: "T7_A", 
+                        title: "🪐 Ley de Gravedad y Kepler",
+                        children: [
+                            { id: "T7_A1", title: "Ley de Newton de gravitación universal. Constante gravitacional" },
+                            { id: "T7_A2", title: "Peso y fuerza gravitacional" },
+                            { id: "T7_A3", title: "Los sistemas planetarios y las Leyes de Kepler" },
+                            { id: "T7_A4", title: "Impulso angular, Segunda Ley de Kepler, Ley de gravedad y mov. de los planetas" }
+                        ]
+                    },
+                    {
+                        id: "T7_B", 
+                        title: "🌌 Campo y Energía Gravitatoria",
+                        children: [
+                            { id: "T7_B1", title: "El campo gravitatorio" },
+                            { id: "T7_B2", title: "Energía y potencial gravitatorio" },
+                            { id: "T7_B3", title: "Energías y órbitas" }
+                        ]
+                    }
+                ]
+            };
+
+            let estado = JSON.parse(localStorage.getItem("progresoFisicaOficialApp2")) || {};
+            let temaActivo = "1";
+
+            const container = document.getElementById('listContainer');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const navButtons = document.querySelectorAll('.nav-btn');
+
+            const svgCopy = `<svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+            const svgCheck = `<svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    navButtons.forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    temaActivo = e.target.dataset.tema;
+                    renderizarLista();
+                });
+            });
+
+            function renderizarLista() {
+                container.innerHTML = '';
+                const temasMostrados = data[temaActivo];
+
+                temasMostrados.forEach(grupo => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'topic-group';
+
+                    const textoBloque = `${grupo.title}\n` + grupo.children.map(c => `- ${c.title}`).join('\n') + '\n\nEnseñame todo esto';
+
+                    const headerDiv = document.createElement('div');
+                    headerDiv.className = `topic-header ${estado[grupo.id] ? 'completed' : ''}`;
+                    headerDiv.innerHTML = `
+                        <div class="check-circle"></div>
+                        <div class="text-content">${grupo.title}</div>
+                        <button class="copy-btn" title="Copiar bloque de temas">${svgCopy}</button>
+                    `;
+                    
+                    headerDiv.addEventListener('click', (e) => {
+                        if(e.target.closest('.copy-btn')) return;
+                        togglePadre(grupo.id, grupo.children);
+                    });
+
+                    const copyBtnPadre = headerDiv.querySelector('.copy-btn');
+                    copyBtnPadre.addEventListener('click', (e) => manejarCopia(e, copyBtnPadre, textoBloque));
+
+                    groupDiv.appendChild(headerDiv);
+
+                    const subtopicsDiv = document.createElement('div');
+                    subtopicsDiv.className = 'subtopics';
+
+                    grupo.children.forEach(hijo => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = `item ${estado[hijo.id] ? 'completed' : ''}`;
+                        itemDiv.innerHTML = `
+                            <div class="check-circle"></div>
+                            <div class="text-content">${hijo.title}</div>
+                        `;
+
+                        itemDiv.addEventListener('click', () => {
+                            toggleHijo(hijo.id, grupo.id, grupo.children);
+                        });
+
+                        subtopicsDiv.appendChild(itemDiv);
+                    });
+
+                    groupDiv.appendChild(subtopicsDiv);
+                    container.appendChild(groupDiv);
+                });
+
+                actualizarProgresoPorTema();
+            }
+
+            function manejarCopia(e, btnElement, texto) {
+                e.stopPropagation();
+                navigator.clipboard.writeText(texto).then(() => {
+                    btnElement.innerHTML = svgCheck;
+                    btnElement.classList.add('copied');
+                    setTimeout(() => {
+                        btnElement.innerHTML = svgCopy;
+                        btnElement.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => console.error('Error al copiar: ', err));
+            }
+
+            function togglePadre(idPadre, hijos) {
+                const nuevoEstado = !estado[idPadre];
+                estado[idPadre] = nuevoEstado;
+                hijos.forEach(hijo => estado[hijo.id] = nuevoEstado);
+                guardarYRenderizar();
+            }
+
+            function toggleHijo(idHijo, idPadre, hermanos) {
+                estado[idHijo] = !estado[idHijo];
+                const todosCompletados = hermanos.every(h => estado[h.id]);
+                estado[idPadre] = todosCompletados;
+                guardarYRenderizar();
+            }
+
+            function guardarYRenderizar() {
+                localStorage.setItem("progresoFisicaOficialApp2", JSON.stringify(estado));
+                renderizarLista();
+            }
+
+            function actualizarProgresoPorTema() {
+                let totalItems = 0;
+                let completados = 0;
+
+                const temasMostrados = data[temaActivo];
+                
+                temasMostrados.forEach(grupo => {
+                    totalItems++; 
+                    if (estado[grupo.id]) completados++;
+
+                    grupo.children.forEach(hijo => {
+                        totalItems++; 
+                        if (estado[hijo.id]) completados++;
+                    });
+                });
+
+                const porcentaje = totalItems === 0 ? 0 : Math.round((completados / totalItems) * 100);
+                progressBar.style.width = porcentaje + '%';
+                progressText.textContent = `${porcentaje}% Progreso del Tema ${temaActivo} (${completados}/${totalItems})`;
+            }
+
+            Object.values(data).forEach(temas => {
+                temas.forEach(grupo => {
+                    if (grupo.children.length > 0) {
+                        const todosCompletados = grupo.children.every(h => estado[h.id]);
+                        if (todosCompletados) estado[grupo.id] = true;
+                    }
+                });
+            });
+            
+            renderizarLista();
+        });
+    </script>
+</body>
+</html>
